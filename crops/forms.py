@@ -1,9 +1,13 @@
 from django import forms
 
 class MainForm(forms.Form):
-    pass
+    def __init__(self,  *args, **kwargs):
+        super(MainForm, self).__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.required = True
 
-class PredictionForm(forms.Form):
+class PredictionForm(MainForm):
     N = forms.FloatField(label='Nitrogen')
     P = forms.FloatField(label='Phosphorus')
     K = forms.FloatField(label='Potassium')

@@ -1,15 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Crop Recommendation System</h1>
 
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
+<style>
+  .fom{
+    background-color: anqua;
+  }
+</style>
 
-    <label for="Soil PH"></label>
-    <input class="form-control">
-    <button type="submit">Predict</button>
-  </form>
+  <h1 class="text-center">Crop Recommendation System</h1>
+
+<div class="fom">
+
+  <div class="d-fleex justify-cofntent-center">
+    <form method="post">
+      {% csrf_token %}
+      <div class="fieldz d-flex flex-wrap">
+
+      {% for field in form %}
+      <div class="col-md-4 p-3">
+        {{field.label}}
+        {{field}}
+        </div>
+        <br>
+      {% endfor %}
+    </div>
+
+        
+      <div class="d-flex justify-content-center">
+
+   <br>
+      <button class="btn btn-primary" type="submit">Predict</button>
+      <br>
+      <br>
+    </div>
+<br>
+    </form>
+  </div>
+</div>
+
 {% endblock %}
 

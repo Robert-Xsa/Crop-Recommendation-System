@@ -12,7 +12,7 @@ def predict(request):
         form = PredictionForm(request.POST)
         if form.is_valid():
             # Load the saved model
-            with open('C:/Users/user/Desktop/Dissertation/ML/crop_recommendation_system/crops/recommender_model.pkl', 'rb') as f:
+            with open('C:/Users/HERMES/Documents/django/crop_reco/crops/recommender_model.pkl', 'rb') as f:
                 model = pickle.load(f)
 
             # Get the input values from the form
