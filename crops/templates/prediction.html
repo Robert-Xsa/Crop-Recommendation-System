@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if prediction %}
+    <h2>The predicted crop is: {{ prediction }}</h2>
+  {% else %}
+    <h2>No prediction available.</h2>
+  {% endif %}
+{% endblock %}
+
+
+
