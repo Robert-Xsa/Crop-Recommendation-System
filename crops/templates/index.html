@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Crop Recommendation System - Home
+{% endblock %}
+
+{% block styles %}
+<style>
+  .header-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<h1>Welcome to the Crop Recommendation System</h1>
+<p>Please <a href="{% url 'login' %}">login</a> to access the crop recommendation tool.</p>
+<div class="container mt-5">
+  <img src="{% static 'crops.jpg' %}" alt="Header Image" class="header-image">
+  
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h2>About the Crop Recommendation System</h2>
+      <p>The Crop Recommendation System is a powerful tool designed to assist farmers in making informed decisions about crop selection based on various factors such as soil type, climate, and market demand.</p>
+      <p>Our system utilizes advanced algorithms and data analysis techniques to provide personalized crop recommendations that can maximize yields and profitability for farmers.</p>
+    </div>
+    <div class="col-md-6">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Accurate crop recommendations based on soil type, climate, and market trends.</li>
+        <li>User-friendly interface for easy navigation and input of relevant data.</li>
+        <li>Real-time data updates to ensure the most up-to-date recommendations.</li>
+        <li>Detailed crop profiles with information on cultivation practices, disease management, and more.</li>
+        <li>Customizable settings to tailor recommendations to specific farming conditions.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <h2>Get Started Today</h2>
+      <p>Sign up for an account to access the Crop Recommendation System and start optimizing your farming practices.</p>
+      <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

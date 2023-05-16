@@ -1,12 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {% if prediction %}
-    <h2>The predicted crop is: {{ prediction }}</h2>
-  {% else %}
-    <h2>No prediction available.</h2>
-  {% endif %}
+  <style>
+    .prediction-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .prediction-text {
+      font-size: 24px;
+    }
+
+    .google-search-link {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+
+  <div class="prediction-container">
+    {% if prediction %}
+      <h2 class="prediction-text">The predicted crop is: {{ prediction }}</h2>
+      {% for crop in prediction %}
+        <a href="https://www.google.com/search?q={{ crop }}+crop" class="google-search-link" target="_blank">Search {{ crop }} crop on Google</a>
+      {% endfor %}
+    {% else %}
+      <h2 class="prediction-text">No prediction available.</h2>
+    {% endif %}
+  </div>
 {% endblock %}
-
-
 
