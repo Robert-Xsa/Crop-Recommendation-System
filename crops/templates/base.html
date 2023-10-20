@@ -51,6 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'predict' %}">Recommendation</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'base_map' %}">Map</a>
+                </li>
             {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">LogIn</a>
@@ -61,6 +64,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'predict' %}">Recommendation</a>
                 </li>
+      
             {% endif %}
         </ul>
     </div>

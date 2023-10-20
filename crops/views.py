@@ -155,4 +155,8 @@ def forgot_password(request):
     
     return render(request, 'forgot_password.html', {'form': form})
 
+@login_required
+def base_map(request):
+    return render(request, 'base_map.html')
+
 
