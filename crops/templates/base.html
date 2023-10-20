@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +17,25 @@
             font-size: 14px;
             color: #555;
         }
-
+    
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             background-color: aquamarine;
+        }
+        
+
+        .element {
+            
+            font-size: 17px;
+            background-color: aquamarine;
+            background-image: url('{% static "crops3.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%; /* Set the width and height of the element */
+            height: 120vh; /* Adjust the height as needed */
         }
 
         .content {
@@ -72,50 +86,53 @@
     <span class="current-date" id="currentDate"></span>
 </nav>
 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'index' %}">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+<div class="element">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
 
-            {% if user.is_authenticated %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'profile' %}">Profile <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'predict' %}">Recommendation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'base_map' %}">Map</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-            {% endif %}
-        </ul>
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'predict' %}">Recommendation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'base_map' %}">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        <span class="current-date" id="currentDate"></span>
+    </nav>
+
+
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
     </div>
-    <span class="current-date" id="currentDate"></span>
-</nav>
 
+    <footer class="bg-light text-center py-3 mt-auto">
+        <p>&copy; <span id="currentYear"></span> Crop Recommendation System. All rights reserved.</p>
+    </footer>
 
-
-<div class="content">
-    {% block content %}
-    {% endblock %}
 </div>
-
-<footer class="bg-light text-center py-3 mt-auto">
-    <p>&copy; <span id="currentYear"></span> Crop Recommendation System. All rights reserved.</p>
-</footer>
 
 <script>
     // Get the current date and time using JavaScript
@@ -136,6 +153,7 @@
 
 {% block scripts %}
 {% endblock %}
+
 
 </body>
 </html>
