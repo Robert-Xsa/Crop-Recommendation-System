@@ -30,7 +30,13 @@ def predict(request):
         form = PredictionForm(request.POST)
         if form.is_valid():
             # Load the saved model
+            #Hardcoding the path
+            '''
             with open('C:/Users/user/Desktop/Dissertation/ML/crop_recommendation_system/crops/recommender_model.pkl', 'rb') as f:
+                model = pickle.load(f)
+            '''
+            #Relative path    
+            with open('crops/recommender_model.pkl', 'rb') as f:
                 model = pickle.load(f)
 
             # Get the input values from the form
@@ -42,8 +48,15 @@ def predict(request):
             ph = form.cleaned_data['ph']
             rainfall = form.cleaned_data['rainfall']
             #Scaling the Input data
+            #Hardcoding the path
+            '''
             with open('C:/Users/user/Desktop/Dissertation/ML/crop_recommendation_system/crops/scaler.pkl', 'rb') as s:
                 scaler = pickle.load(s)
+            '''    
+            #Relative path
+            with open('crops/scaler.pkl', 'rb') as s:
+                scaler = pickle.load(s)   
+                
             #Get the scaler object from the loaded model
             user_data ={'N': [N],'P': [P],'K': [K], 'temperature':[temperature],'humidity':[humidity],'ph': [ph],'rainfall':[rainfall]}
             user_data = pd.DataFrame(user_data)
