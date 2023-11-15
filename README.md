@@ -9,3 +9,7 @@ https://www.kaggle.com/datasets/mohitsingh1804/crop-recommendation
 Access the notebook used to train the model through the following link;
 
 https://www.kaggle.com/code/robertgembe/crop-recommendation-system
+
+Output dataset after training five different machine learning model is accessed through the following link;
+
+https://www.kaggle.com/datasets/robertgembe/crop-recommendations-model-metrics
