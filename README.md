@@ -5,3 +5,7 @@ Crop recommendation systems can contribute to sustainable agriculture by helping
 Dataset used in this project found from the following link;
 
 https://www.kaggle.com/datasets/mohitsingh1804/crop-recommendation
+
+Access the notebook used to train the model through the following link;
+
+https://www.kaggle.com/code/robertgembe/crop-recommendation-system
