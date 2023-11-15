@@ -13,3 +13,8 @@ https://www.kaggle.com/code/robertgembe/crop-recommendation-system
 Output dataset after training five different machine learning model is accessed through the following link;
 
 https://www.kaggle.com/datasets/robertgembe/crop-recommendations-model-metrics
+
+Dataset used to design and produce a map for Tanzania is accessed through the following link;
+
+https://www.kaggle.com/datasets/robertgembe/tanzania-regions-and-their-crops-cultivated
+
