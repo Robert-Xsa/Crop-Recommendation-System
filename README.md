@@ -18,6 +18,6 @@ Dataset used to design and produce a map for Tanzania is accessed through the fo
 
 https://www.kaggle.com/datasets/robertgembe/tanzania-regions-and-their-crops-cultivated
 
-Lastly, This is the web based system developed using Django(python framework). You may clone the project and run to your local  enviroments.
+Lastly, This is the web based system developed using Django(python framework).
 
 
